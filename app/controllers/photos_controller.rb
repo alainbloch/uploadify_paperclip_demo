@@ -34,11 +34,6 @@ class PhotosController < ApplicationController
     end
   end
 
-  # GET /photos/1/edit
-  def edit
-    @photo = Photo.find(params[:id])
-  end
-
   # POST /photos
   # POST /photos.xml
   def create
@@ -56,28 +51,6 @@ class PhotosController < ApplicationController
         format.xml  { render :xml => @photo.errors, :status => :unprocessable_entity }
         format.json { render :json => { :result => 'error', :error => @asset.errors.full_messages.to_sentence } }        
         format.js   
-      end
-    end
-  end
-
-
-  # PUT /photos/1
-  # PUT /photos/1.xml
-  def update
-    @photo = Photo.find(params[:id])
-    @photo.photo_content_type = MIME::Types.type_for(@photo.photo_file_name).to_s
-    respond_to do |format|
-      if @photo.update_attributes(params[:photo])
-        flash[:notice] = 'Photo was successfully updated.'
-        format.html { redirect_to(@photo) }
-        format.xml  { head :ok }
-        format.json { render :json => { :result => 'success', :photo => photo_path(@photo) } }        
-        format.js         
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @photo.errors, :status => :unprocessable_entity }
-        format.json { render :json => { :result => 'error', :error => @asset.errors.full_messages.to_sentence } }
-        format.js        
       end
     end
   end
