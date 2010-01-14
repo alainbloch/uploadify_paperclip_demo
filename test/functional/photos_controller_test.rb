@@ -25,16 +25,6 @@ class PhotosControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, :id => photos(:one).to_param
-    assert_response :success
-  end
-
-  test "should update photo" do
-    put :update, :id => photos(:one).to_param, :photo => { }
-    assert_redirected_to photo_path(assigns(:photo))
-  end
-
   test "should destroy photo" do
     assert_difference('Photo.count', -1) do
       delete :destroy, :id => photos(:one).to_param
