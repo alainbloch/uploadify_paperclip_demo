@@ -67,9 +67,4 @@ class PhotosController < ApplicationController
     end
   end
   
-  #Check for file that already exists.   
-  def check
-    
-  end
-  
 end
