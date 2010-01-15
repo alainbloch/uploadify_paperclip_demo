@@ -29,11 +29,11 @@ Rails::Initializer.run do |config|
   # you must remove the Active Record framework.
   # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
 
-
+=begin
   %w(middleware).each do |dir|
     config.load_paths << "#{RAILS_ROOT}/app/#{dir}" 
   end
-
+=end
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
