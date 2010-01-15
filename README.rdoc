@@ -1,5 +1,14 @@
 = Uploadify/Paperclip
 
+This is a fork of the http://github.com/leeh/uploadify_paperclip_demo
+
+It has been refactored to make it more modular in design. The most significant aspect is most of the logic has been
+encapsulated in a plugin I created, uploadify_rails. You can find the plugin here:
+
+http://github.com/alainbloch/uploadify_rails
+
+= Original README
+
 This is a simple Rails (2.3.4) app that shows using Uploadify http://www.uploadify.com to upload multiple image files, using Paperclip to store them.
 
 I originally built this while testing it myself, and am putting it up since I didn't ever find a clear and complete example that worked in 2.3.4.
