@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+  
   # GET /photos
   # GET /photos.xml
   def index
@@ -36,7 +37,7 @@ class PhotosController < ApplicationController
 
   # POST /photos
   # POST /photos.xml
-  def create
+  def create    
     @photo = Photo.new(params[:photo])
     @photo.photo_content_type = MIME::Types.type_for(@photo.photo_file_name).to_s
     respond_to do |format|
