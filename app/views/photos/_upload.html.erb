@@ -1,4 +1,7 @@
-<%= render_uploadify(:id  => "photo_photo", :url => photos_path) %>
+<%= render_uploadify(:id  => "photo_photo", :url => photos_path, :fields => ["photo_title"]) %>
+<div>
+  <%= text_field :photo, :title %>
+</div>
 <div>
   <%= file_field :photo, :photo %>
 </div>
